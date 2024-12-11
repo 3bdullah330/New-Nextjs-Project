@@ -1,0 +1,25 @@
+services:
+  nextjs:
+    container_name: 'Saeid_Graduation_Project'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ImageName:ImageTag
+    networks:
+      - network
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"console.log('test')\""]
+      interval: 5m
+      timeout: 10s
+      retries: 5
+
+networks:
+  network:
+    driver: bridge
