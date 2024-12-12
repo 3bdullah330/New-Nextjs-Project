@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npx create-next-app@latest
+RUN npm install
 
 EXPOSE 3000
 

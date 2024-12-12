@@ -1,10 +1,10 @@
 services:
   nextjs:
-    container_name: 'Saeid_Graduation_Project'
+    container_name: 'NewNextjsProject'
     build:
       context: .
       dockerfile: Dockerfile
-    image: ImageName:ImageTag
+    image: nextjs:dev
     networks:
       - network
     volumes:
@@ -19,6 +19,8 @@ services:
       interval: 5m
       timeout: 10s
       retries: 5
+    stdin_open: true
+    tty: true
 
 networks:
   network:
