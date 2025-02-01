@@ -9,16 +9,8 @@ services:
       - network
     volumes:
       - .:/app
-      - /app/node_modules
     ports:
       - "3000:3000"
-    environment:
-      NODE_ENV: development
-    healthcheck:
-      test: ["CMD-SHELL", "node -e \"console.log('test')\""]
-      interval: 5m
-      timeout: 10s
-      retries: 5
     stdin_open: true
     tty: true
 
